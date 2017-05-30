@@ -6,11 +6,11 @@ Instead uses ~~shader magic~~ [camera replacement shaders](https://docs.unity3d.
 ## Limitations:
 
 - Requires forward rendering
-- Only supports opaque object rendering using a very simple shader (diffuse map and colour)
+- The world inside the portals is rendered using a very simple shader (diffuse map and colour)
 - Does not work with skyboxes or camera background color
 - No moving through the portals, yet
 
-You can add more complicated subshaders to the World Replacement and Portal Replacement shaders.
+You can add more subshaders to the Portal Replacement shaders for "advanced" features like transparency.
 
 ## Controls:  
 
