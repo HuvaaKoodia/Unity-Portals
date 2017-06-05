@@ -8,19 +8,12 @@ public class Portal : MonoBehaviour
     public Portal target;
     public Camera portalCamera;
     public Transform projectionCenter;
-
-    private Transform mainCameraTransform;
     #endregion
     #region init
     private void Start()
     {
         if (!target)
-        {
             Debug.LogErrorFormat("Portal {0} has no Target", gameObject.name);
-            return;
-        }
-
-        mainCameraTransform = mainCamera.transform;
     }
     #endregion
     #region logic
