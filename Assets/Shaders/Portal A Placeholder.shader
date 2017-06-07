@@ -2,10 +2,8 @@
 	
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
-		_MainTex("Base (RGB)", 2D) = "white" {}
-
-		_ScrollNormal("Scrolling Normal", 2D) = "white" {}
-		_EmissionColor("Emission Color", Color) = (1,1,1,1)
+		_Emission("Emission Color", Color) = (0,0,0,1)
+		_MainTex("Diffuse", 2D) = "white" {}
 		_Speed("Speed", float) = 10
 	}
 

@@ -43,7 +43,7 @@ Shader "Custom/Portal B Replacement Shader" {
 
 		CGPROGRAM
 		#pragma surface surf Lambert
-		#include "PortalInsidePortalSurface.cginc"
+		#include "PortalSurface.cginc"
 		ENDCG
 	}
 
