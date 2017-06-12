@@ -1,12 +1,6 @@
-//Replacement subshaders for drawing objects inside the portals
+//Replacement subshaders for drawing objects inside the A portal
 
 Shader "Custom/Portal A Replacement Shader" {
-	Properties{
-		_Color("Main Color", Color) = (1,1,1,1)
-		_MainTex("Base (RGB)", 2D) = "white" {}
-		_BumpMap("Normalmap", 2D) = "bump" {}
-	}
-
 	SubShader
 	{//This subshader marks portal B as a drawable area using the stencil buffer
 		Tags{ "Queue" = "Geometry-10" "RenderType" = "PortalB" }
@@ -23,12 +17,11 @@ Shader "Custom/Portal A Replacement Shader" {
 		ZWrite Off
 		Cull off
 
-		// Do nothing specific in the pass
 		Pass{}
 	}
 
 	SubShader
-	{//This subshader draws portal A effect inside the view from portal B
+	{//This subshader draws the portal A effect inside the view from portal B
 		Tags{ "Queue" = "Geometry+10" "RenderType" = "PortalA" }
 
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -37,8 +30,8 @@ Shader "Custom/Portal A Replacement Shader" {
 
 		Stencil
 		{//Only draw if inside the drawable portal area
-		Ref 1
-		Comp Equal
+			Ref 1
+			Comp Equal
 		}
 
 		CGPROGRAM
@@ -62,7 +55,7 @@ Shader "Custom/Portal A Replacement Shader" {
 		}
 
 		CGPROGRAM
-		#pragma surface surf Lambert
+		#pragma surface surf BlinnPhong
 		#include "WorldInsidePortalSurface.cginc"
 		ENDCG
 		}
